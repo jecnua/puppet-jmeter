@@ -1,7 +1,7 @@
 # jmeter
 #
 # @summary Main class for jmeter module
-# 
+#
 # @example Declaring the class
 #   class { 'jmeter': }
 #
@@ -58,12 +58,12 @@ class jmeter (
 
   Exec { path => '/bin:/usr/bin:/usr/sbin' }
 
-  validate_legacy('Optional[Boolean]', 'validate_bool', $plugin_manager_install)
-  # It looks like archive module already validates the URI itself
-  validate_legacy('Optional[String]', 'validate_re', $download_url, ['.'])
-  validate_legacy('Optional[String]', 'validate_re', $plugin_manager_url, ['.'])
-  validate_legacy('Optional[Boolean]', 'validate_bool', $manage_java)
-  validate_legacy('Optional[Boolean]', 'validate_bool', $enable_server)
+  # validate_legacy('Optional[Boolean]', 'validate_bool', $plugin_manager_install)
+  # # It looks like archive module already validates the URI itself
+  # validate_legacy('Optional[String]', 'validate_re', $download_url, ['.'])
+  # validate_legacy('Optional[String]', 'validate_re', $plugin_manager_url, ['.'])
+  # validate_legacy('Optional[Boolean]', 'validate_bool', $manage_java)
+  # validate_legacy('Optional[Boolean]', 'validate_bool', $enable_server)
 
   contain ::jmeter::install
 
